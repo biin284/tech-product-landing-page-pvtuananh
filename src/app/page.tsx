@@ -4,6 +4,8 @@ import { SpecsSection } from "@/components/sections/specs-section";
 import { GallerySection } from "@/components/sections/gallery-section";
 import { TestimonialsSection } from "@/components/sections/testimonials-section";
 import { PricingSection } from "@/components/sections/pricing-section";
+import { FaqSection } from "@/components/sections/faq-section";
+import { ContactSection } from "@/components/sections/contact-section";
 
 export default function Home() {
   return (
@@ -14,9 +16,8 @@ export default function Home() {
       <GallerySection />
       <TestimonialsSection />
       <PricingSection />
-      <div className="flex min-h-[40vh] items-center justify-center border-t border-border">
-        <p className="text-muted-foreground">More sections coming soon.</p>
-      </div>
+      <FaqSection />
+      <ContactSection />
     </main>
   );
 }
