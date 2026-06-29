@@ -1,5 +1,7 @@
 export const SITE_NAME = "SmartWatch";
 
+export const SITE_TAGLINE = "Your day, perfectly tracked.";
+
 export const SITE_DESCRIPTION =
   "SmartWatch — a premium smartwatch built for all-day health tracking, week-long battery life, and a display that never sleeps.";
 
