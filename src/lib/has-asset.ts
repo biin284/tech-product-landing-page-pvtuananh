@@ -19,3 +19,22 @@ export function findPublicAsset(
   }
   return null;
 }
+
+/**
+ * Looks for `<baseRelativePath>-1.<ext>`, `-2`, ... up to `maxCount` and
+ * returns whichever exist, in order. Used by the gallery section so adding
+ * gallery-1.png, gallery-2.png, etc. to public/ is all it takes to populate
+ * the variant switcher — no code changes.
+ */
+export function findPublicAssetSequence(
+  baseRelativePath: string,
+  extensions: string[],
+  maxCount: number,
+): string[] {
+  const found: string[] = [];
+  for (let index = 1; index <= maxCount; index += 1) {
+    const asset = findPublicAsset(`${baseRelativePath}-${index}`, extensions);
+    if (asset) found.push(asset);
+  }
+  return found;
+}
