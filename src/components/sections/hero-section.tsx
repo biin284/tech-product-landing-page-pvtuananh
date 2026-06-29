@@ -2,7 +2,6 @@ import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
-import { Reveal } from "@/components/ui/reveal";
 import { findPublicAsset } from "@/lib/has-asset";
 
 const HERO_IMAGE_EXTENSIONS = ["png", "jpg", "jpeg", "webp"];
@@ -27,7 +26,7 @@ export function HeroSection() {
       />
 
       <Container className="grid items-center gap-16 lg:grid-cols-2">
-        <Reveal>
+        <div>
           <Badge>New — Series X</Badge>
           <h1 className="mt-6 text-5xl font-semibold tracking-tight sm:text-6xl lg:text-7xl">
             Your day, <span className="text-accent">perfectly</span> tracked.
@@ -53,9 +52,9 @@ export function HeroSection() {
               </div>
             ))}
           </dl>
-        </Reveal>
+        </div>
 
-        <Reveal delay={150} className="relative mx-auto w-full max-w-md">
+        <div className="relative mx-auto w-full max-w-md">
           <div className="relative aspect-square w-full animate-float">
             {heroImageSrc ? (
               <Image
@@ -75,7 +74,7 @@ export function HeroSection() {
               </div>
             )}
           </div>
-        </Reveal>
+        </div>
       </Container>
     </section>
   );
