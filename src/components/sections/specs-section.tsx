@@ -19,10 +19,10 @@ export function SpecsSection() {
             {SPECS.map((spec) => (
               <div
                 key={spec.label}
-                className="flex items-baseline justify-between gap-4 border-b border-border py-4"
+                className="flex flex-col gap-1 border-b border-border py-4 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4"
               >
                 <dt className="text-sm text-muted-foreground">{spec.label}</dt>
-                <dd className="text-right font-mono text-sm font-medium">
+                <dd className="font-mono text-sm font-medium sm:text-right">
                   {spec.value}
                 </dd>
               </div>
