@@ -46,7 +46,14 @@ The Open Graph/social share image and the favicon are generated from code (`src/
 
 ## Git workflow
 
-Feature branches are cut per section/concern and merged into `develop` via PR; `develop` is merged into `main` (the Vercel production branch) when ready to ship.
+For every bug, feature, or doc change, the flow is **two PRs**:
+
+1. Cut a branch from `develop` using prefix `feat/`, `fix/`, or `docs/` → push → open **PR #1** into `develop`.
+2. Once merged, open **PR #2** (`develop` → `main`) when ready to ship — this triggers a Vercel production redeploy.
+
+Never push directly to `develop` or `main`.
+
+See [`.claude/docs/git-workflow.md`](.claude/docs/git-workflow.md) for branch naming conventions, full commands, and the hotfix procedure.
 
 ## Deploying to Vercel
 
