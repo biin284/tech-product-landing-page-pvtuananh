@@ -44,14 +44,22 @@ export function GalleryColorSwitcher({ images }: GalleryColorSwitcherProps) {
         onPointerUp={handlePointerUp}
         onPointerCancel={handlePointerCancel}
       >
-        <Image
-          src={images[active]}
-          alt={`SmartWatch gallery photo ${active + 1}`}
-          fill
-          sizes="(min-width: 1024px) 560px, 90vw"
-          className="object-contain"
-          draggable={false}
-        />
+        {images.map((src, index) => (
+          <div
+            key={src}
+            className="absolute inset-0 transition-transform duration-700 ease-in-out"
+            style={{ transform: `translateX(${(index - active) * 100}%)` }}
+          >
+            <Image
+              src={src}
+              alt={`SmartWatch gallery photo ${index + 1}`}
+              fill
+              sizes="(min-width: 1024px) 560px, 90vw"
+              className="object-contain"
+              draggable={false}
+            />
+          </div>
+        ))}
       </div>
 
       <div className="mt-6 flex justify-center gap-3">
