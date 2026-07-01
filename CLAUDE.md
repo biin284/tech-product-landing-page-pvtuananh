@@ -45,7 +45,7 @@ Full detail: [`.claude/docs/asset-fallback.md`](.claude/docs/asset-fallback.md).
 - **Content lives in `src/content/*.ts`** as typed arrays (features, specs, testimonials, pricing, faq), not inline in JSX.
 - **One accent color.** `--color-accent` is the only brand color — don't introduce a second.
 - **Contact form has no backend.** It POSTs directly to Web3Forms from the client. Don't add an API route or server action for it.
-- **Git workflow:** feature branch → PR into `develop`. Only merge `develop` → `main` when intentionally deploying — `main` is the Vercel production branch.
+- **Git workflow:** For every bug, feature, or doc change — cut a branch from `develop` (`feat/`, `fix/`, `docs/` prefix), push, open PR #1 into `develop`, then PR #2 `develop` → `main` to deploy. Never push directly to `develop` or `main`. Full steps: [`.claude/docs/git-workflow.md`](.claude/docs/git-workflow.md).
 - **Never hardcode a path under `public/images/product/`.** Always resolve product images through `findPublicAsset`/`findPublicAssetSequence`.
 
 ## 6. Supplementary documents
@@ -54,3 +54,4 @@ Full detail: [`.claude/docs/asset-fallback.md`](.claude/docs/asset-fallback.md).
 - [`.claude/docs/content-model.md`](.claude/docs/content-model.md) — the typed `content/*.ts` data pattern and how sections consume it
 - [`.claude/docs/asset-fallback.md`](.claude/docs/asset-fallback.md) — `has-asset.ts` mechanics in full
 - [`.claude/docs/seo-performance.md`](.claude/docs/seo-performance.md) — metadata/JSON-LD/sitemap/robots setup and the performance rules behind the Lighthouse scores
+- [`.claude/docs/git-workflow.md`](.claude/docs/git-workflow.md) — branch naming conventions, step-by-step 2-PR flow (feature → develop → main), hotfix procedure
