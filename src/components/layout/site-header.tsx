@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { MobileNavSheet } from "@/components/layout/mobile-nav-sheet";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { NAV_ITEMS, SITE_NAME } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
@@ -30,38 +31,41 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <Button href="#contact" size="sm" className="hidden md:inline-flex">
-          Get SmartWatch
-        </Button>
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+          <Button href="#contact" size="sm" className="hidden md:inline-flex">
+            Get SmartWatch
+          </Button>
 
-        <button
-          type="button"
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-          onClick={() => setOpen((prev) => !prev)}
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-border md:hidden"
-        >
-          <span className="relative block h-3.5 w-4">
-            <span
-              className={cn(
-                "absolute left-0 top-0 h-px w-full bg-foreground transition-transform duration-200",
-                open && "top-1/2 rotate-45",
-              )}
-            />
-            <span
-              className={cn(
-                "absolute left-0 top-1/2 h-px w-full bg-foreground transition-opacity duration-200",
-                open && "opacity-0",
-              )}
-            />
-            <span
-              className={cn(
-                "absolute bottom-0 left-0 h-px w-full bg-foreground transition-transform duration-200",
-                open && "bottom-1/2 -rotate-45",
-              )}
-            />
-          </span>
-        </button>
+          <button
+            type="button"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            onClick={() => setOpen((prev) => !prev)}
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-border md:hidden"
+          >
+            <span className="relative block h-3.5 w-4">
+              <span
+                className={cn(
+                  "absolute left-0 top-0 h-px w-full bg-foreground transition-transform duration-200",
+                  open && "top-1/2 rotate-45",
+                )}
+              />
+              <span
+                className={cn(
+                  "absolute left-0 top-1/2 h-px w-full bg-foreground transition-opacity duration-200",
+                  open && "opacity-0",
+                )}
+              />
+              <span
+                className={cn(
+                  "absolute bottom-0 left-0 h-px w-full bg-foreground transition-transform duration-200",
+                  open && "bottom-1/2 -rotate-45",
+                )}
+              />
+            </span>
+          </button>
+        </div>
       </Container>
 
       <MobileNavSheet open={open} onClose={() => setOpen(false)} />
