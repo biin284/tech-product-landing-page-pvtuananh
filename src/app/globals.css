@@ -14,6 +14,15 @@
   --font-mono: var(--font-geist-mono);
 }
 
+html.light {
+  --color-background: #f8f9fa;
+  --color-surface: #ffffff;
+  --color-surface-elevated: #f0f2f5;
+  --color-border: #e1e5ea;
+  --color-foreground: #0a0a0b;
+  --color-muted-foreground: #5a5d66;
+}
+
 html {
   scroll-behavior: smooth;
 }
