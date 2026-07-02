@@ -55,7 +55,7 @@ export function HeroSection() {
         </div>
 
         <div className="relative mx-auto w-full max-w-md">
-          <div className="relative aspect-square w-full animate-float">
+          <div className="relative aspect-square w-full animate-float overflow-hidden rounded-[2.5rem] border border-border bg-surface shadow-xl">
             {heroImageSrc ? (
               <Image
                 src={heroImageSrc}
@@ -63,7 +63,7 @@ export function HeroSection() {
                 fill
                 priority
                 sizes="(min-width: 1024px) 480px, 80vw"
-                className="object-contain drop-shadow-2xl"
+                className="object-contain"
               />
             ) : (
               <div className="flex h-full w-full flex-col items-center justify-center gap-2 rounded-[2.5rem] border border-dashed border-border bg-gradient-to-br from-surface-elevated to-surface px-6 text-center text-sm text-muted-foreground">
