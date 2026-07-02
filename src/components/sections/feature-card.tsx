@@ -23,12 +23,7 @@ export function FeatureCard({ feature, delay = 0 }: FeatureCardProps) {
         )}
       >
         <Icon className={cn("text-accent", feature.featured ? "h-9 w-9" : "h-7 w-7")} />
-        <h3
-          className={cn(
-            "font-semibold tracking-tight",
-            feature.featured ? "text-2xl" : "text-lg",
-          )}
-        >
+        <h3 className="text-lg font-semibold tracking-tight">
           {feature.title}
         </h3>
         <p className="text-sm text-muted-foreground">{feature.description}</p>
