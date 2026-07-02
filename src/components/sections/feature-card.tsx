@@ -18,7 +18,7 @@ export function FeatureCard({ feature, delay = 0 }: FeatureCardProps) {
     >
       <Card
         className={cn(
-          "flex h-full flex-col justify-end gap-4 transition-colors hover:border-accent/40",
+          "flex h-full flex-col justify-start gap-4 transition-colors hover:border-accent/40",
           feature.featured && "p-8",
         )}
       >
