@@ -13,21 +13,21 @@ function subscribe(callback: () => void) {
 }
 
 function getSnapshot() {
-  return document.documentElement.classList.contains("light") ? "light" : "dark";
+  return document.documentElement.classList.contains("dark") ? "dark" : "light";
 }
 
 function getServerSnapshot() {
-  return "dark";
+  return "light";
 }
 
 export function ThemeToggle() {
   const theme = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
   const toggle = useCallback(() => {
-    const nowLight = !document.documentElement.classList.contains("light");
-    document.documentElement.classList.toggle("light", nowLight);
+    const nowDark = !document.documentElement.classList.contains("dark");
+    document.documentElement.classList.toggle("dark", nowDark);
     try {
-      localStorage.setItem("theme", nowLight ? "light" : "dark");
+      localStorage.setItem("theme", nowDark ? "dark" : "light");
     } catch {}
   }, []);
 
